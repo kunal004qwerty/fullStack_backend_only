@@ -25,4 +25,4 @@ SELECT * FORM Customers;
 docker exec -it mysql-container bash
 
 # after use 
-docker compose down
+docker compose downs
