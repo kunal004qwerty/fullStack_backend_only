@@ -1,0 +1,11 @@
+
+// health-check
+http://localhost:8000/api/v1/healthchecker
+
+curl http://localhost:8000/api/v1/healthchecker
+
+
+id:
+e3755cc1-58fe-44be-a52d-3aae47e0f34b 
+
+curl http://localhost:8000/api/v1/products/seed

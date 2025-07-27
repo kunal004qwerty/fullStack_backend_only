@@ -1,0 +1,88 @@
+                     +----------------+
+                     |   Customer     |
+                     +----------------+
+                     | id (PK)        |
+                     | email          |
+                     | password       |
+                     | salt           |
+                     | phone          |
+                     | role           |
+                     +----------------+
+                            |
+                            | 1
+                            |———< (customerId)
+                            | 
+                     +----------------+
+                     |   Address      |
+                     +----------------+
+                     | id (PK)        |
+                     | street         |
+                     | postalCode     |
+                     | city           |
+                     | country        |
+                     | customerId (FK)|
+                     +----------------+
+
+
+                            M:N (through Cart)
+                     +----------------+            +----------------+
+                     |   Customer     |<———M:N———>|    Product     |
+                     +----------------+            +----------------+
+                            ^                             ^
+                            |                             |
+                            |                             |
+                     +----------------+           +------------------+
+                     |     Cart       |           |     Wishlist     |
+                     +----------------+           +------------------+
+                     | customerId (FK)|           | customerId (FK)  |
+                     | productId (FK) |           | productId (FK)   |
+                     | unit           |           +------------------+
+                     +----------------+
+
+
+                            1:M
+                     +----------------+
+                     |   Customer     |
+                     +----------------+
+                            |
+                            | 1
+                            |———< (customerId)
+                            |
+                     +----------------+
+                     |    Order       |
+                     +----------------+
+                     | id (PK)        |
+                     | orderId        |
+                     | customerId (FK)|
+                     | amount         |
+                     | status         |
+                     | txnId          |
+                     +----------------+
+
+                            M:N (through OrderProduct)
+                     +----------------+
+                     |    Order       |
+                     +----------------+
+                            ^
+                            |
+                            |
+                     +--------------------+
+                     |   OrderProduct     |
+                     +--------------------+
+                     | orderId (FK)       |
+                     | productId (FK)     |
+                     | unit               |
+                     +--------------------+
+                            |
+                            v
+                     +----------------+
+                     |    Product     |
+                     +----------------+
+                     | id (PK)        |
+                     | name           |
+                     | desc           |
+                     | type           |
+                     | price          |
+                     | available      |
+                     | supplier       |
+                     +----------------+

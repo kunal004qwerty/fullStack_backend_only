@@ -1,0 +1,7 @@
+no we added the reddis and rabbitMq in our 
+
+
+
+MySQL: port 3306
+Redis: port 6379
+RabbitMQ UI: http://localhost:15672 (user/pass: guest/guest)
